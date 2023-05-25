@@ -2,8 +2,11 @@
 
 namespace MaterialKit.WinForm.Themes
 {
-    public class ColorSheme
+    /// <summary> Цветовая схема </summary>
+    public partial class ColorSheme
     {
+        public static ColorSheme Default { get; private set; } 
+
         /// <summary> цвет фона окна или контрола </summary>
         public Color Background { get; private set; }
 
@@ -23,5 +26,24 @@ namespace MaterialKit.WinForm.Themes
         public Color ForeAccept { get; private set; }
 
 
+        static ColorSheme()
+        {
+            Default = new ColorSheme();
+        }
+
+        public ColorSheme()
+        {
+
+        }
+
+        public ColorSheme(Color background, Color backFields, Color backAccept, Color foreground, Color foreFields, Color foreAccept)
+        {
+            Background = background;
+            BackFields = backFields;
+            BackAccept = backAccept;
+            Foreground = foreground;
+            ForeFields = foreFields;
+            ForeAccept = foreAccept;
+        }
     }
 }

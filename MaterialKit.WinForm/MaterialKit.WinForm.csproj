@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GraphicsDraws\BrightnessColor.cs" />
+    <Compile Include="GraphicsDraws\Persent.cs" />
     <Compile Include="MaterialKitForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -51,6 +53,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Themes\ColorSheme.cs" />
+    <Compile Include="Themes\Defaults\Classic.cs" />
+    <Compile Include="Themes\Defaults\Colors.cs" />
+    <Compile Include="Themes\Thema.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MaterialKitForm.resx">
