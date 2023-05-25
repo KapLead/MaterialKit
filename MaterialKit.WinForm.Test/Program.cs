@@ -8,7 +8,7 @@ namespace MaterialKit.WinForm.Test
     {
         [STAThread] static void Main()
         {
-            Thema.Initialization(ColorSheme.Classic);
+            Thema.Initialization(ColorSheme.Blue);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

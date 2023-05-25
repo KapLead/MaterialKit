@@ -21,19 +21,19 @@ namespace MaterialKit.WinForm.GraphicsDraws
         /// <summary> увеличение цвета на фиксированный процент </summary>
         public static byte ToIntARGB_add(this byte value, Persent persent)
         {
-            var v = int.Parse(persent.ToString().Substring(1)) * 255 / 100;
-            if (v < 0) value = 0;
-            if (v > 255) value = 255;
-            return (byte)value;
+            var v =value + int.Parse(persent.ToString().Substring(1)) * 255 / 100;
+            if (v < 0) v = 0;
+            if (v > 255) v = 255;
+            return (byte)v;
         }
 
         /// <summary> уменьшение цвета на фиксированный процент </summary>
         public static byte ToIntARGB_less(this byte value, Persent persent)
         {
-            var v = int.Parse(persent.ToString().Substring(1)) * 255 / 100;
-            if (v < 0) value = 0;
-            if (v > 255) value = 255;
-            return (byte)value;
+            var v = value - int.Parse(persent.ToString().Substring(1)) * 255 / 100;
+            if (v < 0) v = 0;
+            if (v > 255) v = 255;
+            return (byte)v;
         }
     }
 }

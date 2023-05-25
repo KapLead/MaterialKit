@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Action\MoveControl.cs" />
     <Compile Include="GraphicsDraws\BrightnessColor.cs" />
     <Compile Include="GraphicsDraws\Persent.cs" />
     <Compile Include="MaterialKitForm.cs">
@@ -87,5 +88,6 @@
   <ItemGroup>
     <None Include="Resources\application.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

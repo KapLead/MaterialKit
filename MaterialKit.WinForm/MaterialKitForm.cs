@@ -1,7 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Runtime.Remoting.Messaging;
 using System.Windows.Forms;
+using MaterialKit.WinForm.Action;
 using MaterialKit.WinForm.GraphicsDraws;
 using MaterialKit.WinForm.Properties;
 using MaterialKit.WinForm.Themes;
@@ -28,17 +30,20 @@ namespace MaterialKit.WinForm
         public Button buttonMinimizeForm;
         public Button buttonNormalForm;
         private PictureBox pictureBox1;
+        private MoveControl moved;
 
         public MaterialKitForm()
         {
             InitializeComponent();
             Thema.KitChangeThema += ThemaOnKitChangeThema;
+            Load += ThemaOnKitChangeThema;
+            moved = new MoveControl(this, new Control[]{ panelTitleName, panelTitleHeader, pictureBox1 });
         }
 
         private void ThemaOnKitChangeThema(object sender, EventArgs e)
         {
-            panelTitleName.BackColor = Thema.Default.Shema.ForeAccept.Darker(Persent._20);
-            panelTitleHeader.BackColor = Thema.Default.Shema.ForeAccept;
+            panelTitleName.BackColor = Thema.Default.Shema.BackAccept.Darker(Persent._20);
+            panelTitleHeader.BackColor = Thema.Default.Shema.BackAccept;
         }
 
 
