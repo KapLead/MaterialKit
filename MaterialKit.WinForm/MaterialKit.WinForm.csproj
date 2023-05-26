@@ -50,6 +50,12 @@
     <Compile Include="Controls\CheckBox.Designer.cs">
       <DependentUpon>CheckBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Label.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Label.Designer.cs">
+      <DependentUpon>Label.cs</DependentUpon>
+    </Compile>
     <Compile Include="FontKit\FontKit.cs" />
     <Compile Include="FontKit\FontKitSize.cs" />
     <Compile Include="FontKit\FontStyle.cs" />
@@ -77,6 +83,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Controls\CheckBox.resx">
       <DependentUpon>CheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Label.resx">
+      <DependentUpon>Label.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MaterialKitForm.resx">
       <DependentUpon>MaterialKitForm.cs</DependentUpon>
