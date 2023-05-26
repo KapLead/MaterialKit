@@ -44,6 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Action\MoveControl.cs" />
+    <Compile Include="Controls\CheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckBox.Designer.cs">
+      <DependentUpon>CheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FontKit\FontKit.cs" />
+    <Compile Include="FontKit\FontStyle.cs" />
     <Compile Include="GraphicsDraws\BrightnessColor.cs" />
     <Compile Include="GraphicsDraws\Persent.cs" />
     <Compile Include="MaterialKitForm.cs">
@@ -62,9 +70,13 @@
     <Compile Include="Themes\ColorSheme.cs" />
     <Compile Include="Themes\Defaults\Classic.cs" />
     <Compile Include="Themes\Defaults\Colors.cs" />
+    <Compile Include="Themes\Defaults\ETypeColor.cs" />
     <Compile Include="Themes\Thema.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\CheckBox.resx">
+      <DependentUpon>CheckBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MaterialKitForm.resx">
       <DependentUpon>MaterialKitForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +87,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\closeYellow.png" />
+    <None Include="Resources\Roboto-Black.ttf" />
+    <None Include="Resources\Roboto-BlackItalic.ttf" />
+    <None Include="Resources\Roboto-Bold.ttf" />
+    <None Include="Resources\Roboto-BoldItalic.ttf" />
+    <None Include="Resources\Roboto-Italic.ttf" />
+    <None Include="Resources\Roboto-Light.ttf" />
+    <None Include="Resources\Roboto-LightItalic.ttf" />
+    <None Include="Resources\Roboto-Medium.ttf" />
+    <None Include="Resources\Roboto-MediumItalic.ttf" />
+    <None Include="Resources\Roboto-Regular.ttf" />
+    <None Include="Resources\Roboto-Thin.ttf" />
+    <None Include="Resources\Roboto-ThinItalic.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\closeMin.png" />

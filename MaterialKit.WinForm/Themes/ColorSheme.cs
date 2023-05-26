@@ -2,10 +2,14 @@
 
 namespace MaterialKit.WinForm.Themes
 {
+
     /// <summary> Цветовая схема </summary>
     public partial class ColorSheme
     {
-        public static ColorSheme Default { get; private set; } 
+        public static ColorSheme Default { get; private set; }
+
+        /// <summary> цвет фона окна или контрола </summary>
+        public Color Accept { get; private set; }
 
         /// <summary> цвет фона окна или контрола </summary>
         public Color Background { get; private set; }
