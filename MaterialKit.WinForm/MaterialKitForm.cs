@@ -42,8 +42,16 @@ namespace MaterialKit.WinForm
 
         private void ThemaOnKitChangeThema(object sender, EventArgs e)
         {
-            panelTitleName.BackColor = Thema.Default.Shema.BackAccept.Darker(Persent._20);
-            panelTitleHeader.BackColor = Thema.Default.Shema.BackAccept;
+            if (Thema.Default != null && Thema.Default.Shema!=null)
+            {
+                panelTitleName.BackColor = Thema.Default.Shema.BackAccept.Darker(Persent._20);
+                panelTitleHeader.BackColor = Thema.Default.Shema.BackAccept;
+            }
+            else
+            {
+                panelTitleName.BackColor = ColorSheme.Classic.BackFields.Darker(Persent._20); 
+                panelTitleHeader.BackColor = ColorSheme.Classic.BackFields;
+            }
         }
 
 
@@ -51,16 +59,16 @@ namespace MaterialKit.WinForm
         private void InitializeComponent()
         {
             this.panelTitleHeader = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTitleName = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonMinimizeForm = new System.Windows.Forms.Button();
             this.buttonNormalForm = new System.Windows.Forms.Button();
             this.buttonCloseForm = new System.Windows.Forms.Button();
             this.panelTitleHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTitleName.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitleHeader
@@ -72,6 +80,16 @@ namespace MaterialKit.WinForm
             this.panelTitleHeader.Name = "panelTitleHeader";
             this.panelTitleHeader.Size = new System.Drawing.Size(800, 59);
             this.panelTitleHeader.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::MaterialKit.WinForm.Properties.Resources.application;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // panelTitleName
             // 
@@ -88,28 +106,19 @@ namespace MaterialKit.WinForm
             this.panel3.Controls.Add(this.buttonNormalForm);
             this.panel3.Controls.Add(this.buttonCloseForm);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(673, 0);
+            this.panel3.Location = new System.Drawing.Point(722, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(127, 26);
+            this.panel3.Size = new System.Drawing.Size(78, 26);
             this.panel3.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::MaterialKit.WinForm.Properties.Resources.application;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // buttonMinimizeForm
             // 
             this.buttonMinimizeForm.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonMinimizeForm.FlatAppearance.BorderSize = 0;
+            this.buttonMinimizeForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonMinimizeForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMinimizeForm.Image = global::MaterialKit.WinForm.Properties.Resources.closeMin;
-            this.buttonMinimizeForm.Location = new System.Drawing.Point(49, 0);
+            this.buttonMinimizeForm.Location = new System.Drawing.Point(0, 0);
             this.buttonMinimizeForm.Name = "buttonMinimizeForm";
             this.buttonMinimizeForm.Size = new System.Drawing.Size(26, 26);
             this.buttonMinimizeForm.TabIndex = 2;
@@ -120,9 +129,10 @@ namespace MaterialKit.WinForm
             // 
             this.buttonNormalForm.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonNormalForm.FlatAppearance.BorderSize = 0;
+            this.buttonNormalForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonNormalForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNormalForm.Image = global::MaterialKit.WinForm.Properties.Resources.closeMax;
-            this.buttonNormalForm.Location = new System.Drawing.Point(75, 0);
+            this.buttonNormalForm.Location = new System.Drawing.Point(26, 0);
             this.buttonNormalForm.Name = "buttonNormalForm";
             this.buttonNormalForm.Size = new System.Drawing.Size(26, 26);
             this.buttonNormalForm.TabIndex = 1;
@@ -133,9 +143,10 @@ namespace MaterialKit.WinForm
             // 
             this.buttonCloseForm.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonCloseForm.FlatAppearance.BorderSize = 0;
+            this.buttonCloseForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCloseForm.Image = global::MaterialKit.WinForm.Properties.Resources.closeYellow;
-            this.buttonCloseForm.Location = new System.Drawing.Point(101, 0);
+            this.buttonCloseForm.Location = new System.Drawing.Point(52, 0);
             this.buttonCloseForm.Name = "buttonCloseForm";
             this.buttonCloseForm.Size = new System.Drawing.Size(26, 26);
             this.buttonCloseForm.TabIndex = 0;
@@ -154,9 +165,9 @@ namespace MaterialKit.WinForm
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MaterialKitForm";
             this.panelTitleHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTitleName.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

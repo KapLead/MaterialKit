@@ -40,8 +40,9 @@ namespace MaterialKit.WinForm.Themes
 
         }
 
-        public ColorSheme(Color background, Color backFields, Color backAccept, Color foreground, Color foreFields, Color foreAccept)
+        public ColorSheme(Color accept,Color background, Color backFields, Color backAccept, Color foreground, Color foreFields, Color foreAccept)
         {
+            Accept = accept;
             Background = background;
             BackFields = backFields;
             BackAccept = backAccept;

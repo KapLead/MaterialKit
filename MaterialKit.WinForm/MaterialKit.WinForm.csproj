@@ -51,6 +51,7 @@
       <DependentUpon>CheckBox.cs</DependentUpon>
     </Compile>
     <Compile Include="FontKit\FontKit.cs" />
+    <Compile Include="FontKit\FontKitSize.cs" />
     <Compile Include="FontKit\FontStyle.cs" />
     <Compile Include="GraphicsDraws\BrightnessColor.cs" />
     <Compile Include="GraphicsDraws\Persent.cs" />
@@ -70,7 +71,7 @@
     <Compile Include="Themes\ColorSheme.cs" />
     <Compile Include="Themes\Defaults\Classic.cs" />
     <Compile Include="Themes\Defaults\Colors.cs" />
-    <Compile Include="Themes\Defaults\ETypeColor.cs" />
+    <Compile Include="Themes\ETypeColor.cs" />
     <Compile Include="Themes\Thema.cs" />
   </ItemGroup>
   <ItemGroup>

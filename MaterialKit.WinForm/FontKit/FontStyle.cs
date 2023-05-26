@@ -1,4 +1,6 @@
-﻿namespace MaterialKit.WinForm
+﻿using System.Drawing;
+
+namespace MaterialKit.WinForm
 {
     /// <summary> Вид шрифта </summary>
     public enum FontStyle : int
@@ -15,5 +17,13 @@
         Regular=9,
         Thin=10,
         ThinItalic=11,
+    }
+
+    public static class ExternFontStyle
+    {
+        public static Font ToFont(this FontStyle style, FontSize size)
+        {
+            return FontKit.Instance.Get(style, size.ToSize());
+        }
     }
 }

@@ -53,6 +53,8 @@ namespace MaterialKit.WinForm
 
         public Font Get(FontStyle style, float size)
         {
+            if (_fontsCollection == null || _fontsCollection.Families == null || _fontsCollection.Families.Length==0)
+                return new Font("Arial",20);
             return new Font(_fontsCollection.Families[(int)style],size);
         }
 
