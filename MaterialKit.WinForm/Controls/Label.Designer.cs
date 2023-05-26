@@ -34,8 +34,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.DoubleBuffered = true;
             this.Name = "Label";
             this.Size = new System.Drawing.Size(242, 31);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Label_Paint);
             this.ResumeLayout(false);
 
         }

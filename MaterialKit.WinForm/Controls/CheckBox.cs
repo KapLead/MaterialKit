@@ -154,8 +154,8 @@ namespace MaterialKit.WinForm.Controls
                     e.Graphics.DrawLine(Background.ToPen(2), rect.X + 7, rect.Y+12, rect.X + 3, rect.Y+8);
                     e.Graphics.DrawLine(Background.ToPen(2), rect.X + 7, rect.Y+12, rect.X+14,rect.Y+5);
                 }
-              
-                e.Graphics.DrawString(Text,Style.ToFont(FontSize), Foreground.ToSolidBrush(), 
+                Font font = Style.ToFont(FontSize) ?? new Font("Arial", 20.75f);
+                e.Graphics.DrawString(Text, font, Foreground.ToSolidBrush(), 
                     new RectangleF(20,0,ClientSize.Width-20,ClientSize.Height)
                     //, new StringFormat{Alignment = Alignment, LineAlignment = LineAlignment }  
                     );

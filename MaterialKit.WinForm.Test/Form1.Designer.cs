@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.checkBox1 = new MaterialKit.WinForm.Controls.CheckBox();
+            this.label1 = new MaterialKit.WinForm.Controls.Label();
             this.SuspendLayout();
             // 
             // buttonCloseForm
@@ -53,26 +54,42 @@
             this.checkBox1.Background = MaterialKit.WinForm.Themes.TypeColor.Background;
             this.checkBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.checkBox1.FontSize = MaterialKit.WinForm.FontSize.Normal;
-            this.checkBox1.Foreground = MaterialKit.WinForm.Themes.TypeColor.Foreground;
+            this.checkBox1.Foreground = MaterialKit.WinForm.Themes.TypeColor.Background;
             this.checkBox1.IsCheck = true;
-            this.checkBox1.LineAlignment = System.Drawing.StringAlignment.Center;
+            this.checkBox1.LineAlignment = System.Drawing.StringAlignment.Near;
             this.checkBox1.Location = new System.Drawing.Point(41, 116);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(410, 23);
+            this.checkBox1.Size = new System.Drawing.Size(419, 30);
             this.checkBox1.Style = MaterialKit.WinForm.FontStyle.Italic;
             this.checkBox1.TabIndex = 1;
-            this.checkBox1.Title = "KitCheckBox";
+            this.checkBox1.Title = "KitCheckBox ло";
+            // 
+            // label1
+            // 
+            this.label1.Accept = MaterialKit.WinForm.Themes.TypeColor.Accept;
+            this.label1.Alignment = System.Drawing.StringAlignment.Near;
+            this.label1.Background = MaterialKit.WinForm.Themes.TypeColor.Background;
+            this.label1.FontSize = MaterialKit.WinForm.FontSize.Normal;
+            this.label1.Foreground = MaterialKit.WinForm.Themes.TypeColor.Foreground;
+            this.label1.LineAlignment = System.Drawing.StringAlignment.Center;
+            this.label1.Location = new System.Drawing.Point(183, 166);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(242, 75);
+            this.label1.Style = MaterialKit.WinForm.FontStyle.Black;
+            this.label1.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.checkBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Controls.SetChildIndex(this.checkBox1, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
             this.ResumeLayout(false);
 
         }
@@ -80,6 +97,7 @@
         #endregion
 
         private Controls.CheckBox checkBox1;
+        private Controls.Label label1;
     }
 }
 
