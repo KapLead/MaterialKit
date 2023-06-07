@@ -9,10 +9,10 @@ namespace MaterialKit.WinForm.Controls
 {
     public partial class Label : UserControl, INotifyPropertyChanged
     {
-        private string _text="LitLabel";
+        private string _text="KitLabel";
         private FontSize _fontSize;
-        private StringAlignment _alignment = StringAlignment.Far;
-        private StringAlignment _lineAlignment = StringAlignment.Far;
+        private StringAlignment _alignment = StringAlignment.Center;
+        private StringAlignment _lineAlignment = StringAlignment.Center;
         private FontStyle _style = FontStyle.Black;
         private TypeColor _background = TypeColor.Background;
         private TypeColor _foreground = TypeColor.Foreground;
@@ -114,7 +114,7 @@ namespace MaterialKit.WinForm.Controls
             }
         }
 
-        [Category("Kit")] public bool ShowShadow {
+        [Category("Kit")] public bool ShadowShow {
             get => _showShadow;
             set
             {
@@ -123,6 +123,36 @@ namespace MaterialKit.WinForm.Controls
                 OnPropertyChanged();
             }
         }
+
+        private Color _shadow;
+        private Size _shadowAlign = new Size(2, 2);
+
+        [Category("Kit")]
+        public Color ShadowColor
+        {
+            get => _shadow;
+            set
+            {
+                if (value == _shadow) return;
+                _shadow = value;
+                Invalidate();
+                OnPropertyChanged();
+            }
+        }
+
+        [Category("Kit")]
+        public Size ShadowAlign
+        {
+            get => _shadowAlign;
+            set
+            {
+                if(_shadowAlign == value) return;
+                _shadowAlign = value;
+                Invalidate();
+                OnPropertyChanged();
+            }
+        }
+
 
         public Label()
         {
@@ -140,9 +170,18 @@ namespace MaterialKit.WinForm.Controls
         private void Label_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.FillRectangle(Background.ToSolidBrush(), e.ClipRectangle);
-            Font font = Style.ToFont(FontSize) ?? new Font("Arial", 20.75f);
-                e.Graphics.DrawString(Text,font, Foreground.ToSolidBrush(),
-                    new RectangleF(20, 0, ClientSize.Width - 20, ClientSize.Height), new StringFormat
+            Font font = Style.ToFont(FontSize);
+            if(ShadowShow)
+                e.Graphics.DrawString(Text, font, new SolidBrush(ShadowColor),
+                    new RectangleF(2, 2, ClientSize.Width - 2, ClientSize.Height-2), new StringFormat
+                    {
+                        Alignment = Alignment,
+                        LineAlignment = LineAlignment
+                    }
+                );
+
+            e.Graphics.DrawString(Text,font, Foreground.ToSolidBrush(),
+                   e.ClipRectangle, new StringFormat
                     {
                         Alignment = Alignment, 
                         LineAlignment = LineAlignment 
